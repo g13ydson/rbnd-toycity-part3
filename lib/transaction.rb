@@ -23,8 +23,12 @@ class Transaction
       @@transactions.find {|transaction| transaction.id == id }
     end
 
-    def self.find_by_customer(customer)
-      @@transactions.find {|transaction| transaction.customer == customer }
+    def self.all_by_customer (customer)
+      @@transactions.find_all {|transaction| transaction.customer == customer }
+    end
+
+    def self.all_by_product (product)
+      @@transactions.find_all {|transaction| transaction.product == product }
     end
 
     private
@@ -39,6 +43,5 @@ class Transaction
         raise OutOfStockError, "'#{product.title}' is out of stock. (OutOfStockError)"   
       end
     end
-
 
 end
