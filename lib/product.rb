@@ -31,4 +31,8 @@ class Product
   		@@products.find {|product| product.title == title }
   	end
 
+  	def in_stock?
+  		stock > 0 ? true : false
+  	end
+
 end
