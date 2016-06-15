@@ -1,12 +1,15 @@
 # lib/product.rb
 
 class Product
-	attr_reader :title
+	attr_reader :title, :price, :stock
 
 	@@products = []
   	
   	def initialize(options={})
   		@title = options[:title]
+  		@price = options[:price]
+  		@stock = options[:stock]
+
   		add_to_products
   	end
 
@@ -15,20 +18,17 @@ class Product
   	end
 
   	def add_to_products
-		contains = false
-  		@@products.each do |product|
-  			if product.title == title 
-  				contains = true
-  			end
-  		end
 
-  		unless contains
-  			@@products << self
+  		if @@products.any? { |product| product.title == title  } 
+  			raise DuplicateProductError, "'#{title}' already exists. (DuplicateProductError)"		
   		else
-  			raise DuplicateProductError, "'#{@title}' already exists. (DuplicateProductError)"		
+  			@@products << self
   		end
 
   	end
 
+  	def self.find_by_title(title)
+  		@@products.find {|product| product.title == title }
+  	end
 
 end
