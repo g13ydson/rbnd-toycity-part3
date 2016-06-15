@@ -1,0 +1,11 @@
+How long did you spend working on this project?
+Some hours. The project was simple.
+
+What was the most rewarding challenge you conquered?
+Can simplify my code using Enumerable mixin.
+
+What two additional features did you build? Why?
+Find all customer transactions and find all transactions of a particular product because I think it is important to verify the transactions
+
+Where do you still have room to grow?
+I have room to grow using the Ruby api. It was something that helped me alot in this exercise.
