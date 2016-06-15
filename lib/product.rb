@@ -35,4 +35,8 @@ class Product
   		stock > 0 ? true : false
   	end
 
+  	def self.in_stock
+  		@@products.find_all {|product| product.stock > 0 }
+  	end
+
 end
