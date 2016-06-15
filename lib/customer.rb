@@ -27,5 +27,9 @@ class Customer
 
     end
 
+    def purchase(customer)
+      Transaction.new(self, customer)
+    end
+
 
 end

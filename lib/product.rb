@@ -39,4 +39,8 @@ class Product
   		@@products.find_all {|product| product.stock > 0 }
   	end
 
+  	def reduce_stock
+  		@stock = @stock - 1
+  	end
+
 end
